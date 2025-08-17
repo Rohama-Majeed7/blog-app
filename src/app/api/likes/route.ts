@@ -12,7 +12,8 @@ export async function POST(req: Request) {
     }
     const likeExists = await prisma.like.findFirst({
         where:{
-            userId:userId
+            postId: blogId,
+            userId: userId
         }
     })
     if (likeExists) {

@@ -39,7 +39,7 @@ function Page() {
     });
     console.log("Login response:", res);
 
-    if (res?.ok) {
+    if (res.url !== null) {
       alert("Login Successful ✅");
       router.push("/");
     } else {

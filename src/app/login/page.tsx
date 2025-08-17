@@ -37,6 +37,7 @@ function Page() {
       email: values.email,
       password: values.password,
     });
+    console.log("Login response:", res);
 
     if (res?.ok) {
       alert("Login Successful ✅");
@@ -52,8 +53,12 @@ function Page() {
         <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-6 sm:p-8 space-y-6 border border-[#f4e1d2] transition-transform hover:scale-[1.01]">
           {/* Heading */}
           <div className="text-center space-y-2">
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#5c3d2e]">Welcome Back 👋</h1>
-            <p className="text-sm sm:text-base text-[#8d6e63]">Login to your account</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#5c3d2e]">
+              Welcome Back 👋
+            </h1>
+            <p className="text-sm sm:text-base text-[#8d6e63]">
+              Login to your account
+            </p>
           </div>
 
           {/* Form */}

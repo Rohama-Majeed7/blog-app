@@ -5,8 +5,7 @@ import { uploadToCloudinary } from "@/lib/cloudinary";
 import { Button } from "@/components/ui/button";
 import { blogCategories } from "@/types/type";
 import "quill/dist/quill.snow.css";
-import ReactQuill from "react-quill-new";
-
+import dynamic from "next/dynamic";
 import {
   Form,
   FormControl,
@@ -27,6 +26,9 @@ import { axiosInstance } from "@/lib/axios";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { FaRegImage } from "react-icons/fa6";
+
+// ✅ load Quill only in browser
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
 type postType = {
   title: string;

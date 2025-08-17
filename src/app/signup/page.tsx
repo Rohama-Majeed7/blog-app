@@ -40,9 +40,9 @@ function SignupPage() {
         alert(res.data.message);
         form.reset();
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error("Signup failed:", error);
-      alert(error.response?.data?.message || "Something went wrong");
+      alert("Something went wrong");
     } finally {
       setLoading(false);
     }

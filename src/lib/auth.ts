@@ -58,6 +58,7 @@ export const { handlers, auth } = NextAuth({
       return session;
     },
   },
+  debug: true, // 👈 Add this
 
   secret: process.env.AUTH_SECRET,
 });

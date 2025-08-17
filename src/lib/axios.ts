@@ -1,5 +1,5 @@
 import axios from "axios"
 
 export const axiosInstance = axios.create({
-    baseURL: "/api",
+    baseURL: "https://blog-app-pcw5.vercel.app/api",
 })

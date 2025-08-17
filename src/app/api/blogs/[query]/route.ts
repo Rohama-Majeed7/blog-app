@@ -1,10 +1,10 @@
 import { prisma } from "@/lib/prisma";
 
 export async function GET(
-  req: Request,
-  { params }: { params: { query: string } }
+     req: Request,
+  context: { params: Promise<{ query: string }> }
 ) {
-  const { query } =  params;
+  const { query } =  await context.params;
   const blog = await prisma.post.findMany({
     where: {
       OR: [{ category: { contains: query } }, { title: { contains: query } }],
